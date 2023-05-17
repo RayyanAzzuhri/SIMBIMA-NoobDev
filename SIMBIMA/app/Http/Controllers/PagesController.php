@@ -32,11 +32,11 @@ class PagesController extends Controller
         if($role == '2'){
             return view('koordinator.dashboard_koor', ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji] );
         } elseif($role == '1') {
-            $data_bimbingan = data_bimbingan::all();
-            return view('dosen.dashboard_dsn', compact('data_bimbingan'));
+           
+            return view('dosen.dashboard_dsn', ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji]);
         } else {
-            $data_bimbingan = data_bimbingan::all();
-            return view('mahasiswa.dashboard_mhs' , compact('data_bimbingan'));
+           
+            return view('mahasiswa.dashboard_mhs' , ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji]);
         }
     }
 }
