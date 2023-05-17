@@ -19,9 +19,11 @@ class PagesController extends Controller
             $data_bimbingan = data_bimbingan::all();
             return view('koordinator.dashboard_koor', compact('data_bimbingan'));
         } elseif($role == '1') {
-            return view('dosen.dashboard_dsn');
+            $data_bimbingan = data_bimbingan::all();
+            return view('dosen.dashboard_dsn', compact('data_bimbingan'));
         } else {
-            return view('mahasiswa.dashboard_mhs');
+            $data_bimbingan = data_bimbingan::all();
+            return view('mahasiswa.dashboard_mhs' , compact('data_bimbingan'));
         }
     }
 }
