@@ -29,14 +29,21 @@ class PagesController extends Controller
         ->where('dosen_penguji', $name)
         ->get();
 
+        $data_bimbingan2 = DB::table('data_bimbingan')
+        ->Where('nama', $name)
+        ->get();
+
         if($role == '2'){
             return view('koordinator.dashboard_koor', ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji] );
         } elseif($role == '1') {
-           
+
             return view('dosen.dashboard_dsn', ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji]);
         } else {
-           
-            return view('mahasiswa.dashboard_mhs' , ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji]);
+            // dd($data_bimbingan);
+            // $data_bimbingan = DB::table('data_bimbingan');
+            // dd($data_bimbingan2);
+            return view('mahasiswa.dashboard_mhs', ['data_bimbing' => $data_bimbingan2, ]);
+
         }
     }
 }
