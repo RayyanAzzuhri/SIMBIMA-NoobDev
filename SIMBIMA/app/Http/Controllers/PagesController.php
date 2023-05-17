@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Subjects;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Subjects;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\data_bimbingan;
 
 class PagesController extends Controller
 {
@@ -14,7 +16,8 @@ class PagesController extends Controller
         $role = Auth::user()->role;
 
         if($role == '2'){
-            return view('koordinator.dashboard_koor');
+            $data_bimbingan = data_bimbingan::all();
+            return view('koordinator.dashboard_koor', compact('data_bimbingan'));
         } elseif($role == '1') {
             return view('dosen.dashboard_dsn');
         } else {
