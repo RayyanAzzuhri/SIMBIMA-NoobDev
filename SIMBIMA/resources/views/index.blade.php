@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    {{-- <x-navbar></x-navbar> --}}
+    <x-navbar></x-navbar>
     <main class="pt-20" style="background-color: #0e4166; text-align: white;">
         <div class="flex items-center justify-center">
             <div class="text-center">
@@ -33,7 +33,7 @@
             </a>
         </div>
 
-        {{-- <x-background></x-background> --}}
+        <x-background></x-background>
     </main>
 
 
