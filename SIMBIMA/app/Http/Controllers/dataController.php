@@ -12,7 +12,6 @@ use Illuminate\Http\RedirectResponse;
 
 
 
-
 class dataController extends Controller
 {
     /**
@@ -21,15 +20,7 @@ class dataController extends Controller
     public function index() : View
     {
         $data_bimbingan = data_bimbingan::all();
-         $dosen_1 = DB::table('nama_dosen')->pluck('Nama')->toArray();
-        $dosen_2 = DB::table('nama_dosen')->pluck('Nama')->toArray();
-        $dosen_penguji = DB::table('nama_dosen')->pluck('Nama')->toArray();
-        $NIM = DB::table('mhs')->pluck('NIM')->toArray();
-        $nama = DB::table('mhs')->pluck('nama')->toArray();
-        // return view('data_bimbingan.index')->with('data_bimbingan', $data_bimbingan);
-         return view('data_bimbingan.index', [  'dosen_penguji' => $dosen_penguji,  'NIM' => $NIM,  'nama' => $nama, 'dosen_1' => $dosen_1,'dosen_2' => $dosen_2,]);
-
-    //    dd($data_bimbingan);
+        return view('data_bimbingan.index')->with('data_bimbingan', $data_bimbingan);
     }
 
     /**
@@ -63,8 +54,7 @@ class dataController extends Controller
     public function show(string $id): View
     {
         $data_bimbingan = data_bimbingan::find($id);
-        // return view('data_bimbingan.show')->with('data_bimbingan', $data_bimbingan);
-        dd($data_bimbingan);
+        return view('data_bimbingan.show')->with('data_bimbingan', $data_bimbingan);
     }
 
     /**

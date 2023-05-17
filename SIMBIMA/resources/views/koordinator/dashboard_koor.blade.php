@@ -14,9 +14,43 @@
     <x-navbar></x-navbar>
 
     <main class="pt-20" style="background-color: #0e4166; position: relative text-align: white;">
+        {{ Auth::user()->name }}
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Mahasiswa</th>
+                    <th>NPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{-- @forelse ($data as $key => $value)
+                    <tr>
+                        <td>{{ $key + 1 }}</td>
+                        <td>{{ $value->user->name }}</td>
+                        <td>{{ $value->user->alamat }}</td>
+                        <td>{{ $value->tanggal }}</td>
+                        <td>{{ $value->jam }}</td>
+                        <td>
+                            @if ($value->status == 0)
+                                <a href="{{ route('pemanggilan-selesai', $value->id) }}"
+                                    class="btn btn-primary">Selesaikan</a>
+                            @else
+                                <button type="button" class="btn btn-success" disabled>Sukses</button>
+                            @endif
+                        </td>
+                    </tr>
+
+                @empty
+                    Data Kosong
+                @endforelse --}}
+            </tbody>
+        </table>
+
+
         <x-background></x-background>
     </main>
-
 
     <footer class="py-5 text-center bg-white fixed-bottom">
         <p>&copy; 2023 NoobDev</p>
