@@ -23,6 +23,7 @@
                 @else
                     <div class="flex items-center">
                         <a href="/dashboard" class="mx-4 font-normal text-white hover:text-gray-400">Dashboard</a>
+                        <a href="/barchart" class="mx-4 font-normal text-white hover:text-gray-400">Statistik</a>
                         <a href="/logout" class="mx-4 font-normal text-white hover:text-gray-400">Logout</a>
                     </div>
                 @endif
