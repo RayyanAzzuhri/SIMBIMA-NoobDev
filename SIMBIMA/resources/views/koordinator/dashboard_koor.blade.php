@@ -14,40 +14,31 @@
     <x-navbar></x-navbar>
 
     <main class="pt-20" style="background-color: #0e4166; position: relative text-align: white;">
-        {{ Auth::user()->name }}
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Mahasiswa</th>
-                    <th>NPM</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{-- @forelse ($data as $key => $value)
+        <div class="container mx-auto mt-8">
+            <table class="min-w-full">
+                <thead>
                     <tr>
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $value->user->name }}</td>
-                        <td>{{ $value->user->alamat }}</td>
-                        <td>{{ $value->tanggal }}</td>
-                        <td>{{ $value->jam }}</td>
-                        <td>
-                            @if ($value->status == 0)
-                                <a href="{{ route('pemanggilan-selesai', $value->id) }}"
-                                    class="btn btn-primary">Selesaikan</a>
-                            @else
-                                <button type="button" class="btn btn-success" disabled>Sukses</button>
-                            @endif
-                        </td>
+                        <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">No</th>
+                        <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Nama</th>
+                        <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">NPM</th>
                     </tr>
-
-                @empty
-                    Data Kosong
-                @endforelse --}}
-            </tbody>
-        </table>
-
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border text-white px-4 py-2">1</td>
+                        <td class="border text-white px-4 py-2">{{ Auth::user()->name }}</td>
+                        <td class="border text-white px-4 py-2">12345678</td>
+                    </tr>
+                    <tr>
+                        <td class="border text-white px-4 py-2">2</td>
+                        <td class="border text-white px-4 py-2">Jane Smith</td>
+                        <td class="border text-white px-4 py-2">87654321</td>
+                    </tr>
+                    <!-- Tambahkan baris lainnya di sini -->
+                </tbody>
+            </table>
+        </div>
 
         <x-background></x-background>
     </main>
