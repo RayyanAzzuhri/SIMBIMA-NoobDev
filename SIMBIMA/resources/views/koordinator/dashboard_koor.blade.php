@@ -27,7 +27,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $d)
+                            @foreach ($data_bimbing as $d)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $d->nama }}</td>
@@ -49,16 +49,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="border px-4 py-2">1</td>
-                                <td class="border px-4 py-2">{{ Auth::user()->name }}</td>
-                                <td class="border px-4 py-2">12345678</td>
-                            </tr>
-                            <tr>
-                                <td class="border px-4 py-2">2</td>
-                                <td class="border px-4 py-2">asam</td>
-                                <td class="border px-4 py-2">87654321</td>
-                            </tr>
+                            @foreach ($data_uji as $d)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $d->nama }}</td>
+                                </tr>
+                            @endforeach
                             <!-- Tambahkan baris lainnya di sini -->
                         </tbody>
                     </table>
