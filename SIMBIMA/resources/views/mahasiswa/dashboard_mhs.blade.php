@@ -11,41 +11,45 @@
 </head>
 
 <body>
+    {{-- @foreach ($data_bimbing as $d) --}}
+    {{-- {{ dd($data_bimbing) }} --}}
+{{-- @endforeach --}}
     <x-navbar></x-navbar>
 
     <main class="pt-20" style="background-color: #0e4166; position: relative text-align: white;">
         <section>
             <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-8">
                 <div class="mr-auto place-self-center lg:col-span-7">
-                    <h1 class=" mb-8 text-xl font-bold leading-none tracking-tight  xl:text-4xl text-white">
+                    <h1 class="mb-8 text-xl font-bold leading-none tracking-tight text-white xl:text-4xl">
                         Welcome, {{ Auth::user()->name }} </h1>
-                    <p class="text-white pb-2">Berikut adalah data pembimbinganmu :</p>
+                    <p class="pb-2 text-white">Berikut adalah data pembimbinganmu :</p>
                     <section>
                         <table>
                             <thead>
-                                @foreach ($data_bimbingan as $d)
+                                @foreach ($data_bimbing as $d)
+
                                     @if (auth::user()->name == $d->nama)
                                         <tr>
-                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Dosen
+                                            <th class="px-4 py-2 font-semibold text-gray-700 bg-gray-200">Dosen
                                                 Pembimbing 1
                                             </th>
-                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">
+                                            <th class="px-4 py-2 font-semibold text-gray-700 bg-gray-200">
                                                 {{ $d->dosen_pembimbing_1 }}
                                             </th>
 
                                         </tr>
                                         <tr>
-                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Dosen
+                                            <th class="px-4 py-2 font-semibold text-gray-700 bg-gray-200">Dosen
                                                 Pembimbing 2
                                             </th>
-                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">
+                                            <th class="px-4 py-2 font-semibold text-gray-700 bg-gray-200">
                                                 {{ $d->dosen_pembimbing_2 }}
                                             </th>
                                         </tr>
                                         <tr>
-                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Dosen Penguji
+                                            <th class="px-4 py-2 font-semibold text-gray-700 bg-gray-200">Dosen Penguji
                                             </th>
-                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">
+                                            <th class="px-4 py-2 font-semibold text-gray-700 bg-gray-200">
                                                 {{ $d->dosen_penguji }}
                                             </th>
                                         </tr>
