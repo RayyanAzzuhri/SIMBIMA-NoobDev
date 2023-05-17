@@ -25,8 +25,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
-
 // Route ini akan mengarahkan ke halaman login
 // url: yang akhiranya adalah /loginpage akan diarahkan ke halaman login
 Route::get('/login', [LoginController::class, 'index'])->name('login');
