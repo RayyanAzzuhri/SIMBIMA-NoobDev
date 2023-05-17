@@ -14,7 +14,53 @@
     <x-navbar></x-navbar>
 
     <main class="pt-20" style="background-color: #0e4166; position: relative text-align: white;">
+        <section>
+            <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-8">
+                <div class="mr-auto place-self-center lg:col-span-7">
+                    <h1 class=" mb-8 text-xl font-bold leading-none tracking-tight  xl:text-4xl text-white">
+                        Welcome, {{ Auth::user()->name }} </h1>
+                    <p class="text-white pb-2">Berikut adalah data pembimbinganmu :</p>
+                    <section>
+                        <table>
+                            <thead>
+                                @foreach ($data_bimbingan as $d)
+                                    @if (auth::user()->name == $d->nama)
+                                        <tr>
+                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Dosen
+                                                Pembimbing 1
+                                            </th>
+                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">
+                                                {{ $d->dosen_pembimbing_1 }}
+                                            </th>
 
+                                        </tr>
+                                        <tr>
+                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Dosen
+                                                Pembimbing 2
+                                            </th>
+                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">
+                                                {{ $d->dosen_pembimbing_2 }}
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">Dosen Penguji
+                                            </th>
+                                            <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">
+                                                {{ $d->dosen_penguji }}
+                                            </th>
+                                        </tr>
+                                    @endif
+                                @endforeach
+                            </thead>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                    <img src="/img/mhs2.png" style="border-radius: 50%;">
+                </div>
+            </div>
+        </section>
 
         <x-background></x-background>
     </main>
