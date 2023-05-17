@@ -28,7 +28,7 @@ class LoginController extends Controller
 
         // if user is exist in database then we will redirect to dashboard page and activate middleware auth page
 
-        
+
         if(Auth::attempt($credential)){
             return redirect()->intended('/dashboard');
         }
