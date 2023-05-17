@@ -28,7 +28,7 @@ class PagesController extends Controller
         $data_uji = DB::table('data_bimbingan')
         ->where('dosen_penguji', $name)
         ->get();
-        
+
         if($role == '2'){
             return view('koordinator.dashboard_koor', ['data_bimbing' => $data_bimbingan, 'data_uji' => $data_uji] );
         } elseif($role == '1') {
