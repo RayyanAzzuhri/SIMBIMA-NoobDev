@@ -21,18 +21,20 @@ class LoginController extends Controller
 
     public function login(Request $request){
         $credential = $request->validate([
+            'role' => 'required',
             'npm' => 'required',
             'password' => 'required'
         ]);
 
         // if user is exist in database then we will redirect to dashboard page and activate middleware auth page
 
+        
         if(Auth::attempt($credential)){
             return redirect()->intended('/dashboard');
         }
 
-        // Alert::error('Error', 'NPM atau Password salah');
-         return back('login');
+        Alert::error('Error', 'Data yang Anda masukkan Salah');
+        return redirect('/login');
 
 }
 
