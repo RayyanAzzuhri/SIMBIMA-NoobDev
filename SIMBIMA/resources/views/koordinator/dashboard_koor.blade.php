@@ -15,8 +15,17 @@
 
     <main class="pt-20" style="background-color: #0e4166; position: relative text-align: white;">
 
-        <div class="container mx-auto mt-8">
-            <table class="min-w-full">
+        @foreach ($data_bimbingan as $bimbingan)
+            @if ($bimbingan->dosen_pembimbing_2 == Auth::user()->name || $bimbingan->dosen_pembimbing_1 == Auth::user()->name)
+                <p>{{ $bimbingan->nama }}</p>
+                {{-- <p>{{ $bimbingan->dosen_pembimbing_1 }}</p>
+                <p>{{ $bimbingan->dosen_pembimbing_2 }}</p>
+                <p>{{ $bimbingan->dosen_penguji }}</p> --}}
+            @endif
+        @endforeach
+
+        <div class="container px-96">
+            <table class="min-w-full tabel">
                 <thead>
                     <tr>
                         <th class="py-2 px-4 bg-gray-200 font-semibold text-gray-700">No</th>
@@ -26,19 +35,20 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="border text-white px-4 py-2">1</td>
-                        <td class="border text-white px-4 py-2">{{ Auth::user()->name }}</td>
-                        <td class="border text-white px-4 py-2">12345678</td>
+                        <td class="border px-4 py-2">1</td>
+                        <td class="border px-4 py-2">{{ Auth::user()->name }}</td>
+                        <td class="border px-4 py-2">12345678</td>
                     </tr>
                     <tr>
-                        <td class="border text-white px-4 py-2">2</td>
-                        <td class="border text-white px-4 py-2">Jane Smith</td>
-                        <td class="border text-white px-4 py-2">87654321</td>
+                        <td class="border px-4 py-2">2</td>
+                        <td class="border px-4 py-2">Jane Smith</td>
+                        <td class="border px-4 py-2">87654321</td>
                     </tr>
                     <!-- Tambahkan baris lainnya di sini -->
                 </tbody>
             </table>
         </div>
+
 
         <x-background></x-background>
     </main>
