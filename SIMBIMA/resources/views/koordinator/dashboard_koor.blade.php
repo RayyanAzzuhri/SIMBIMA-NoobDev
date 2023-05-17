@@ -110,57 +110,66 @@
     <x-navbar></x-navbar>
     <!--Container-->
     <main class="pt-20" style="background-color: #0e4166; position: relative; text-align: white;">
-        <div class="container w-full px-2 mx-auto md:w-4/5 xl:w-3/5">
-
-            <!--Card-->
-            <div id='recipients' class="p-8 mt-6 bg-white rounded shadow lg:mt-0">
-
-                <table id="example" class="stripe hover" style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
-                    <thead>
-                        <tr>
-                            <th data-priority="1">No</th>
-                            <th data-priority="2">Nama</th>
-                            <th data-priority="3">NPM</th>
-                            <th data-priority="3">Status</th>
-                            {{-- <th data-priority="4">Age</th>
-                            <th data-priority="5">Start date</th>
-                            <th data-priority="6">Salary</th> --}}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @php
-                            $iterations = 1;
-                        @endphp
-                        @foreach ($data_bimbing as $d)
-                            <tr>
-                                <td>{{ $iterations }}</td>
-                                <td>{{ $d->nama }}</td>
-                                <td>{{ $d->NIM }}</td>
-                                <td>Dibimbing</td>
-                                @php
-                            $iterations++;
-                        @endphp
-                            </tr>
-                        @endforeach
-                        @foreach ($data_uji as $d)
-                            <tr>
-                                <td>{{ $iterations }}</td>
-                                <td>{{ $d->nama }}</td>
-                                <td>{{ $d->NIM }}</td>
-                                <td>Diuji</td>
-                                @php
-                            $iterations++;
-                            @endphp
-                            </tr>
-                        @endforeach
-                    </tbody>
-
-                </table>
-
+        <section>
+            <div>
+                <h1 class="mb-8 text-xl font-bold leading-none tracking-tight xl:text-3xl text-white ms-8">
+                    Selamat Datang Bapak {{ Auth::user()->name }}
+                </h1>
+                <p class="text-white ms-8 pb-8">Berikut adalah daftar mahasiswa dibimbing & diuji :</p>
             </div>
-            <!--/Card-->
 
-        </div>
+            <div>
+                <div class="container w-full px-2 mx-auto md:w-4/5 xl:w-3/5">
+                    <!--Card-->
+                    <div id='recipients' class="p-8 mt-6 bg-white rounded shadow lg:mt-0">
+
+                        <table id="example" class="stripe hover"
+                            style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                            <thead>
+                                <tr>
+                                    <th data-priority="1">No</th>
+                                    <th data-priority="2">Nama</th>
+                                    <th data-priority="3">NPM</th>
+                                    <th data-priority="3">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                    $iterations = 1;
+                                @endphp
+                                @foreach ($data_bimbing as $d)
+                                    <tr>
+                                        <td>{{ $iterations }}</td>
+                                        <td>{{ $d->nama }}</td>
+                                        <td>{{ $d->NIM }}</td>
+                                        <td>Dibimbing</td>
+                                        @php
+                                            $iterations++;
+                                        @endphp
+                                    </tr>
+                                @endforeach
+                                @foreach ($data_uji as $d)
+                                    <tr>
+                                        <td>{{ $iterations }}</td>
+                                        <td>{{ $d->nama }}</td>
+                                        <td>{{ $d->NIM }}</td>
+                                        <td>Diuji</td>
+                                        @php
+                                            $iterations++;
+                                        @endphp
+                                    </tr>
+                                @endforeach
+                            </tbody>
+
+                        </table>
+
+                    </div>
+                    <!--/Card-->
+                </div>
+            </div>
+
+        </section>
+
         <x-background></x-background>
     </main>
     <!--/container-->
