@@ -21,8 +21,8 @@
             <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-8">
                 <div class="mr-auto place-self-center lg:col-span-7">
                     <h1 class="mb-8 text-xl font-bold leading-none tracking-tight text-white xl:text-4xl">
-                        Welcome, {{ Auth::user()->name }} </h1>
-                    <p class="pb-2 text-white">Berikut adalah data pembimbinganmu :</p>
+                        Selamat Datang, {{ Auth::user()->name }} </h1>
+                    <p class="pb-2 text-white text-xl">Berikut adalah data pembimbingmu :</p>
                     <section>
                         <table>
                             <thead>

@@ -115,7 +115,7 @@
                 <h1 class="mb-8 text-xl font-bold leading-none tracking-tight xl:text-3xl text-white ms-8">
                     Selamat Datang Bapak {{ Auth::user()->name }}
                 </h1>
-                <p class="text-white ms-8 pb-8">Berikut adalah daftar mahasiswa dibimbing & diuji :</p>
+                <p class="text-white ms-8 pb-8 text-2xl">Berikut adalah daftar mahasiswa dibimbing & diuji :</p>
             </div>
 
             <div>
