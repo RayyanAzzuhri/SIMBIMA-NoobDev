@@ -13,7 +13,7 @@
                 @if (Auth::user()->role == '2')
                     <div class="flex items-center">
                         <a href="/dashboard" class="mx-4 font-normal text-white hover:text-gray-400">Dashboard</a>
-                        <a href="/data_bimbingan/index" class="mx-4 font-normal text-white hover:text-gray-400">View
+                        <a href="/data_bimbingan" class="mx-4 font-normal text-white hover:text-gray-400">View
                             Data</a>
                         <a href="/data_bimbingan/create" class="mx-4 font-normal text-white hover:text-gray-400">Input
                             Data</a>
@@ -23,6 +23,7 @@
                 @else
                     <div class="flex items-center">
                         <a href="/dashboard" class="mx-4 font-normal text-white hover:text-gray-400">Dashboard</a>
+                        <a href="/barchart" class="mx-4 font-normal text-white hover:text-gray-400">Statistik</a>
                         <a href="/logout" class="mx-4 font-normal text-white hover:text-gray-400">Logout</a>
                     </div>
                 @endif
