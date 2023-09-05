@@ -5,7 +5,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <title>Dashboard</title>
+     <title>Input Data</title>
      @vite(['resources/css/app.css', 'resources/js/app.js'])
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
  </head>
@@ -94,47 +94,36 @@
              </div>
          </section>
          <script>
-            // Get the input elements
-            const dosen1Input = document.querySelector('input[name="dosen_pembimbing_1"]');
-            const dosen2Input = document.querySelector('input[name="dosen_pembimbing_2"]');
-            
-            // Add event listener to the first input
-            dosen1Input.addEventListener('input', function() {
-              // Get the selected value
-              const selectedValue = this.value.trim();
-              
-              // Get all the options in dosen_pembimbing_2
-              const options = document.querySelectorAll('#dosen_pembimbing_2 option');
-          
-              // Disable the options that match the selected value
-              options.forEach(function(option) {
-                const optionValue = option.value.trim();
-                if (optionValue.localeCompare(selectedValue, undefined, { sensitivity: 'base' }) === 0) {
-                  option.disabled = true;
-                } else {
-                  option.disabled = false;
-                }
-              });
-          
-              // Clear the value of the second input if the selected value matches
-              if (dosen2Input.value.trim() === selectedValue) {
-                dosen2Input.value = '';
-              }
-            });
-          </script>
-          
-          
-          
-          
-        
-        
-         
-        
-        
-        
-        
+             // Get the input elements
+             const dosen1Input = document.querySelector('input[name="dosen_pembimbing_1"]');
+             const dosen2Input = document.querySelector('input[name="dosen_pembimbing_2"]');
 
-        
+             // Add event listener to the first input
+             dosen1Input.addEventListener('input', function() {
+                 // Get the selected value
+                 const selectedValue = this.value.trim();
+
+                 // Get all the options in dosen_pembimbing_2
+                 const options = document.querySelectorAll('#dosen_pembimbing_2 option');
+
+                 // Disable the options that match the selected value
+                 options.forEach(function(option) {
+                     const optionValue = option.value.trim();
+                     if (optionValue.localeCompare(selectedValue, undefined, {
+                             sensitivity: 'base'
+                         }) === 0) {
+                         option.disabled = true;
+                     } else {
+                         option.disabled = false;
+                     }
+                 });
+
+                 // Clear the value of the second input if the selected value matches
+                 if (dosen2Input.value.trim() === selectedValue) {
+                     dosen2Input.value = '';
+                 }
+             });
+         </script>
 
          <x-background></x-background>
      </main>
